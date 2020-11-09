@@ -9,12 +9,12 @@ describe("when dijkstra's algorithm is started", () => {
     const nodes = [firstNode, secondNode];
     const startIndex = 2;
 
-    const startingNode = startDijkstra(nodes, startIndex);
+    const startingNode = startDijkstra(nodes, startIndex).startNode;
     expect(startingNode).toBe(secondNode);
   });
 
   [2, 0].forEach((startIndex) => {
-    test(`should use a valid start nodes: startIndex is ${startIndex}`, () => {
+    test(`should use valid start nodes: startIndex is ${startIndex}`, () => {
       const firstNode = new Node();
       const nodes = [firstNode];
 
@@ -22,4 +22,17 @@ describe("when dijkstra's algorithm is started", () => {
       expect(startingNode).toBeInstanceOf(DijkstraError);
     });
   });
+
+    test(`should use valid end nodes`, () => {
+      const firstNode = new Node();
+      const secondNode = new Node();
+      const thirdNode = new Node();
+
+      const startIndex = 1;
+      const endIndex = 4;
+      const nodes = [firstNode, secondNode, thirdNode];
+
+      const endNode = startDijkstra(nodes, startIndex, endIndex).endNode;
+      expect(endNode).toBeInstanceOf(DijkstraError)
+    })
 });

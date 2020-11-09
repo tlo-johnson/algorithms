@@ -3,10 +3,12 @@ import DijkstraError from "./dijkstraError";
 
 const SHIFT_INDEX = 1;
 
-const startDijkstra = (nodes, startIndex) => {
-   if(!isValidIndex(nodes, startIndex)) return new DijkstraError() 
-   
-    return nodes[startIndex - SHIFT_INDEX];
+const startDijkstra = (nodes, startIndex, endNode) => {
+    if (!isValidIndex(nodes, startIndex)) return new DijkstraError()
+
+    return {
+        startNode: nodes[startIndex - SHIFT_INDEX],
+    }
 };
 
 const isValidIndex = (nodes, startIndex) => {
