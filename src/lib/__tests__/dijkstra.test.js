@@ -14,6 +14,20 @@ describe("when dijkstra's algorithm is started", () => {
     expect(result.startNode).toBe(secondNode);
   });
 
+  [1, 2, 3, 4].forEach((startIndex) => {
+    test(`should be able to use all nodes as a start node: startIndex is ${startIndex}`, () => {
+      const firstNode = new Node();
+      const secondNode = new Node();
+      const thirdNode = new Node();
+      const fourthNode = new Node();
+      const nodes = [firstNode, secondNode, thirdNode, fourthNode];
+      const endIndex = 2;
+
+      const result = startDijkstra(nodes, startIndex, endIndex);
+      expect(result.startNode).toBe(nodes[startIndex]);
+    });
+  });
+
   [2, 0].forEach((startIndex) => {
     test(`should use valid start nodes: startIndex is ${startIndex}`, () => {
       const firstNode = new Node();
