@@ -1,4 +1,5 @@
 import Node from "../../model/node";
+import DijkstraError from "../dijkstraError";
 import startDijkstra from "../dijkstra";
 
 describe("when dijkstra's algorithm is started", () => {
@@ -12,13 +13,13 @@ describe("when dijkstra's algorithm is started", () => {
     expect(startingNode).toBe(secondNode);
   });
 
-  test("should use a valid start nodes", () => {
-    const firstNode = new Node();
-    const nodes = [firstNode];
-    const startIndex = 2;
+  [2, 0].forEach((startIndex) => {
+    test(`should use a valid start nodes: startIndex is ${startIndex}`, () => {
+      const firstNode = new Node();
+      const nodes = [firstNode];
 
-    const startingNode = startDijkstra(nodes, startIndex);
-    expect(startingNode).not.toBeUndefined();
-  })
+      const startingNode = startDijkstra(nodes, startIndex);
+      expect(startingNode).toBeInstanceOf(DijkstraError);
+    });
+  });
 });
-
