@@ -6,8 +6,19 @@ describe("when dijkstra's algorithm is started", () => {
     const firstNode = new Node();
     const secondNode = new Node();
     const nodes = [firstNode, secondNode];
+    const startIndex = 2;
 
-    const startingNode = startDijkstra(nodes, 2);
+    const startingNode = startDijkstra(nodes, startIndex);
     expect(startingNode).toBe(secondNode);
   });
+
+  test("should use a valid start nodes", () => {
+    const firstNode = new Node();
+    const nodes = [firstNode];
+    const startIndex = 2;
+
+    const startingNode = startDijkstra(nodes, startIndex);
+    expect(startingNode).not.toBeUndefined();
+  })
 });
+
