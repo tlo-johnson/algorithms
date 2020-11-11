@@ -39,7 +39,7 @@ describe("when dijkstra's algorithm is started", () => {
     });
   });
 
-  test(`should use valid end nodes`, () => {
+  test('should use valid end nodes', () => {
     const firstNode = new Node();
     const secondNode = new Node();
     const thirdNode = new Node();
@@ -51,4 +51,19 @@ describe("when dijkstra's algorithm is started", () => {
     const result = startDijkstra(nodes, startIndex, endIndex);
     expect(result).toBeInstanceOf(DijkstraError);
   });
+
+  [1, 2, 3].forEach((endIndex) => {
+    test(`it should be able to use all nodes as ending points: endIndex is ${endIndex}`, () => {
+      const startIndex = 1;
+
+      const firstNode = new Node();
+      const secondNode = new Node();
+      const thirdNode = new Node();
+      
+      const nodes = [firstNode, secondNode, thirdNode];
+
+      const result = startDijkstra(nodes, startIndex, endIndex);
+      expect(result.endNode).toBe(nodes[endIndex - 1]);
+    })
+  })
 });
