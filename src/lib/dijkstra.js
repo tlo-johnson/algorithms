@@ -12,7 +12,7 @@ const startDijkstra = (nodes, startIndex, endIndex) => {
 };
 
 const isValidIndex = (nodes, index) => {
-  return index <= nodes.length && index > SHIFT_INDEX;
+  return index >= SHIFT_INDEX && index - SHIFT_INDEX < nodes.length;
 };
 
 export default startDijkstra;

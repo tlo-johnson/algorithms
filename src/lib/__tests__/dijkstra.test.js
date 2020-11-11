@@ -24,7 +24,7 @@ describe("when dijkstra's algorithm is started", () => {
       const endIndex = 2;
 
       const result = startDijkstra(nodes, startIndex, endIndex);
-      expect(result.startNode).toBe(nodes[startIndex]);
+      expect(result.startNode).toBe(nodes[startIndex - 1]);
     });
   });
 
