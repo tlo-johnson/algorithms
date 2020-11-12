@@ -1,4 +1,3 @@
-import Node from "./../model/Node";
 import DijkstraError from "./dijkstraError";
 
 const SHIFT_INDEX = 1;

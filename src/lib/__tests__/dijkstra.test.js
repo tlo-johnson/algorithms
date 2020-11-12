@@ -39,7 +39,7 @@ describe("when dijkstra's algorithm is started", () => {
     });
   });
 
-  test('should use valid end nodes', () => {
+  test("should use valid end nodes", () => {
     const firstNode = new Node();
     const secondNode = new Node();
     const thirdNode = new Node();
@@ -59,11 +59,12 @@ describe("when dijkstra's algorithm is started", () => {
       const firstNode = new Node();
       const secondNode = new Node();
       const thirdNode = new Node();
-      
+
       const nodes = [firstNode, secondNode, thirdNode];
 
       const result = startDijkstra(nodes, startIndex, endIndex);
       expect(result.endNode).toBe(nodes[endIndex - 1]);
-    })
-  })
+    });
+  });
 });
+
