@@ -8,6 +8,7 @@ const startDijkstra = (nodes, startIndex, endIndex) => {
 
   return {
     startNode: nodes[startIndex - SHIFT_INDEX],
+    endNode: nodes[endIndex - SHIFT_INDEX],
   };
 };
 
@@ -16,3 +17,4 @@ const isValidIndex = (nodes, index) => {
 };
 
 export default startDijkstra;
+
