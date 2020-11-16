@@ -1,3 +1,4 @@
+import { isEqual } from "./../util/nodeUtil";
 class World {
   constructor() {
     this.blockedNodes = [];
@@ -12,8 +13,8 @@ class World {
     return this.blockedNodes.splice(nodeToRemoveIndex, 1);
   };
 
-  findNodeIndex = (coordinate) => {
-    return this.blockedNodes.findIndex((node) => node.x === coordinate.x && node.y === coordinate.y);
+  findNodeIndex = (node) => {
+    return this.blockedNodes.findIndex((n) => isEqual(n, node));
   }
 }
 
