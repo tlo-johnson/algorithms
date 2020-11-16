@@ -7,9 +7,14 @@ class World {
     this.blockedNodes.push(coordinate);
   };
 
-  removeBlockedNode = () => {
-    this.blockedNodes = [];
+  removeBlockedNode = (coordinate) => {
+    let nodeToRemoveIndex = this.findNodeIndex(coordinate);
+    return this.blockedNodes.splice(nodeToRemoveIndex, 1);
   };
+
+  findNodeIndex = (coordinate) => {
+    return this.blockedNodes.findIndex((node) => node.x === coordinate.x && node.y === coordinate.y);
+  }
 }
 
 export default World;
