@@ -3,6 +3,8 @@ class Node {
     this.x = x;
     this.y = y;
   }
+
+  equals(otherNode) {}
 }
 
 export default Node;
