@@ -1,5 +1,4 @@
 class World {
-
   constructor() {
     this.blockedNodes = [];
   }
@@ -8,7 +7,9 @@ class World {
     this.blockedNodes.push(coordinate);
   };
 
-  removeBlockedNode = () => {}
+  removeBlockedNode = () => {
+    this.blockedNodes = [];
+  };
 }
 
 export default World;
